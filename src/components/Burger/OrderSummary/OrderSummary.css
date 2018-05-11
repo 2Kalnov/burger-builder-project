@@ -1,0 +1,33 @@
+.IngredientsList {
+  padding: 0;
+  list-style-type: none;
+}
+
+.IngredientsList li {
+  padding: 10px;
+  border-top: 2px solid rgba(128, 100, 9, 0.4);
+}
+
+.IngredientsList li:first-child {
+  border: none;
+}
+
+h3 {
+  text-align: center;
+}
+
+.ContinueButtonsWrapper {
+  text-align: center;
+}
+
+.ContinueButtonsWrapper Button:last-of-type {
+  margin-right: 0;
+  padding-right: 0;
+}
+
+@media (max-width: 600px) {
+  .IngredientsList {
+    height: 110px;
+    overflow-y: scroll;
+  }
+}

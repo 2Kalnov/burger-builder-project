@@ -1,0 +1,130 @@
+.BreadTop {
+  height: 20%;
+  width: 80%;
+  background: linear-gradient(#bc581e, #e27b36);
+  border-radius: 80% 80% 8% 8%;
+  box-shadow: inset 8px 8px 15px rgb(214, 158, 105);
+  margin: 2% auto;
+  position: relative;
+}
+
+.Seeds {
+  position: absolute;
+  width: 8%;
+  height: 11%;
+  border-radius: 100%;
+  left: 32%;
+  top: 34%;
+  background-color: #f1d655;
+  transform: rotate(-15deg);
+  box-shadow: inset 1px 1px 2px rgba(70, 70, 70, 0.2);
+}
+
+.Seeds:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  position: absolute;
+  top: -90%;
+  left: -160%;
+  background-color: #f1d655;
+  box-shadow: inset -1px -1px 2px rgba(70, 70, 70, 0.2);
+  transform: rotate(30deg)
+}
+
+.Seeds:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  position: absolute;
+  top: 80%;
+  left: 150%;
+  background-color: #f1d655;
+  box-shadow: inset -1px -1px 2px rgba(70, 70, 70, 0.2);
+  transform: rotate(40deg)
+}
+
+.Seeds2 {
+  position: absolute;
+  width: 8%;
+  height: 11%;
+  border-radius: 100%;
+  left: 80%;
+  top: 30%;
+  background-color: #f1d655;
+  transform: rotate(8deg);
+  box-shadow: inset 1px 1px 2px rgba(70, 70, 70, 0.2);
+}
+
+.Seeds2:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  position: absolute;
+  top: 150%;
+  left: -160%;
+  background-color: #f1d655;
+  box-shadow: inset -1px -1px 2px rgba(70, 70, 70, 0.2);
+  transform: rotate(20deg)
+}
+
+.Seeds2:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  position: absolute;
+  top: 200%;
+  left: -320%;
+  background-color: #f1d655;
+  box-shadow: inset -1px -1px 2px rgba(70, 70, 70, 0.2);
+  transform: rotate(-30deg)
+}
+
+.Salad {
+  width: 83%;
+  height: 5%;
+  background: linear-gradient(#228c1d, #91ce50);
+  margin: 1% auto;
+  border-radius: 47% 46% 50% 40%;
+}
+
+.Bacon {
+  width: 79%;
+  height: 3%;
+  background: linear-gradient(#bf3813, #c35e30);
+  margin: 1% auto;
+  border-radius: 15%;
+}
+.Tomato {
+  width: 83%;
+  height: 3.8%;
+  background: linear-gradient(#eb4d04, #f13506);
+  margin: 0.8% auto;
+  border-radius: 35%;
+}
+.Cheese {
+  width: 86%;
+  height: 3.5%;
+  background: linear-gradient(#f4d004, #d6bb22);
+  margin: 1% auto;
+  border-radius: 30% 25% 40% 34%;
+}
+.Meat {
+  width: 82%;
+  height: 9%;
+  background: linear-gradient(#7f3608, #702e05);
+  margin: 0.9% auto;
+  border-radius: 35% 30% 8% 5%;
+}
+.BreadBottom {
+  height: 15%;
+  width: 80%;
+  background: linear-gradient(80deg, #f08e4a, #e27b36);
+  margin: 2% auto;
+  box-shadow: inset -8px -8px 15px rgba(151, 91, 35, 0.8);
+  border-radius: 5% 5% 30% 30%;
+}
