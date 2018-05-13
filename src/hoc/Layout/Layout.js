@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
-import Wrap from '../../hoc/Wrap';
-import Toolbar from '../Navigation/Toolbar/Toolbar';
-import SideDrawer from '../Navigation/SideDrawer/SideDrawer';
+import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
+import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
 import classes from './Layout.css';
 
 class Layout extends Component {
@@ -21,7 +20,7 @@ class Layout extends Component {
 
   render() {
     return (
-      <Wrap>
+      <React.Fragment>
         <Toolbar drawerToggle={this.sideDrawerToggleHandler}/>
         <SideDrawer 
           close={this.sideDrawerClosingHandler} 
@@ -29,7 +28,7 @@ class Layout extends Component {
         <main className={classes.Content}>
           {this.props.children}
         </main>
-      </Wrap>
+      </React.Fragment>
     );
   }
 }

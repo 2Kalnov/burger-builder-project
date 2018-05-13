@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import Wrap from '../../hoc/Wrap';
 import Burger from '../../components/Burger/Burger';
 import BuildControls from '../../components/Burger/BuildControls/BuildControls';
 import Modal from '../../components/UI/Modal/Modal';
+import Spinner from '../../components/UI/Spinner/Spinner';
 import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary';
+import axios from '../../axios-orders';
 
 const INGREDIENT_PRICES = {
   salad: 40.50,
@@ -24,7 +25,8 @@ class BurgerBuilder extends Component {
     },
     totalPrice: 30,
     purchaseable: false,
-    purchasing: false
+    purchasing: false,
+    loading: false
   }
 
   purchaseCancelHandler = () => {
@@ -32,7 +34,27 @@ class BurgerBuilder extends Component {
   }
 
   purchaseContinueHandler = () => {
-    alert('Оплата заказа');
+    this.setState({loading: true});
+    const order = {
+      ingredients: this.state.ingredients,
+      price: this.state.totalPrice.toFixed(2),
+      customer: {
+        name: 'Nikita Kalnov',
+        address: {
+          street: 'Teststreet 0',
+          zipCode: 'test'
+        },
+        email: 'test@test.com'
+      },
+      deliveryMethod: 'fastest'
+    } 
+    axios.post('/orders.json', order)
+      .then(response => {
+        this.setState({loading: false, purchasing: false});
+      })
+      .catch(error => {
+        this.setState({loading: false, purchasing: false});
+      });
   }
 
   updatePurchaseState = (ingredients) => {
@@ -96,17 +118,22 @@ class BurgerBuilder extends Component {
     }
 
     return(
-    <Wrap>
+    <React.Fragment>
       <Modal 
         show={this.state.purchasing}
-        closeModal={this.purchaseCancelHandler}>
-        <OrderSummary
+        closeModal={this.purchaseCancelHandler}
+      >
+        {this.state.loading
+        ? <Spinner/>
+        : 
+         <OrderSummary
           purchaseCancelled={this.purchaseCancelHandler}
           purchaseContinued={this.purchaseContinueHandler}
           ingredients={this.state.ingredients}
           price={INGREDIENT_PRICES}
           totalPrice={this.state.totalPrice}
         />
+        }
       </Modal>
       <Burger ingredients={this.state.ingredients}></Burger>
       <BuildControls
@@ -118,7 +145,7 @@ class BurgerBuilder extends Component {
         purchaseable={this.state.purchaseable}
         ordering={this.purchaseHandler}
       />
-    </Wrap>
+    </React.Fragment>
     );
   }
 }

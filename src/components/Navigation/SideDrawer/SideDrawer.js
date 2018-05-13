@@ -2,14 +2,13 @@ import React from 'react';
 import Logo from '../../Logo/Logo';
 import NavigationItems from '../NavigationItems/NavigationItems';
 import Backdrop from '../../UI/Backdrop/Backdrop';
-import Wrap from '../../../hoc/Wrap';
 
 import classes from './SideDrawer.css';
 
 
 const sideDrawer = (props) => {
   return (
-    <Wrap>
+    <React.Fragment>
       <Backdrop show={props.showing} clicked={props.close}/>
       <div className={[classes.SideDrawer, props.showing ? classes.Open : classes.Close].join(' ')}>
         <div className={classes.Logo}>
@@ -19,7 +18,7 @@ const sideDrawer = (props) => {
           <NavigationItems/>
         </nav>
       </div>
-    </Wrap>
+    </React.Fragment>
   );
 }
 
